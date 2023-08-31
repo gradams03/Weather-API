@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body {
+            background-image: url('https://techcrunch.com/wp-content/uploads/2012/04/clouds.jpg'); /* cloud image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 72px;
+            text-align: center;
+            color: #fff; /* Text color for the title */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for title */
+        }
+
+        p {
+            font-size: 24px;
+            text-align: center;
+            color: #fff; /* Text color for other elements */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for other elements */
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <p>Location: <span id="location">{{ location }}</span></p>
+    <p>Temperature: <span id="temperature">{{ temperature_fahrenheit }}</span> °F</p> <!-- Corrected to display Fahrenheit -->
+    <p>Condition: <span id="condition">{{ condition }}</span></p>
+
+    <form action="/get_weather" method="get">
+        <input type="text" name="zipCode" placeholder="Enter ZIP code">
+        <button type="submit">Get Weather</button>
+    </form>
+    
+</body>
+</html>
